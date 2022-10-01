@@ -12,6 +12,7 @@ public class BackgroundManager : MonoBehaviour
     public int maxObstacles;
     public float obstacleXHalfRange;
     public UnityEngine.Object obstacleToSpawn;
+    public int firstSpawnBackgroundIndex;
 
     private Boolean genNext = false;
     private int backgroundCounter = 0;
@@ -36,18 +37,22 @@ public class BackgroundManager : MonoBehaviour
             UnityEngine.Object newBackground = Instantiate(this, new Vector3(thisX, thisY + thisHeight, thisZ), Quaternion.identity);
             newBackground.GetComponent<BackgroundManager>().backgroundCounter = this.backgroundCounter + 1;
 
-            // Spawn new obstacle cars
-            int numObstacles = UnityEngine.Random.Range(minObstacles, maxObstacles + 1);
-            for (int i = 0; i < numObstacles; i++)
+            if (backgroundCounter >= firstSpawnBackgroundIndex)
             {
-                Transform obsT = obstacleToSpawn.GetComponent<Transform>();
-                Transform newT = newBackground.GetComponent<Transform>();
-                Instantiate(obstacleToSpawn, new Vector3(newT.position.x, newT.position.y, obsT.position.z), Quaternion.identity); // TODO: set x, y
+                // Spawn new obstacle cars
+                int numObstacles = UnityEngine.Random.Range(minObstacles, maxObstacles + 1);
+                for (int i = 0; i < numObstacles; i++)
+                {
+                    Transform obsT = obstacleToSpawn.GetComponent<Transform>();
+                    Transform newT = newBackground.GetComponent<Transform>();
+                    UnityEngine.Object obs = Instantiate(obstacleToSpawn, new Vector3(newT.position.x, newT.position.y, obsT.position.z), Quaternion.identity); // TODO: set random x, y, spawn in lanes?
+                    obs.GetComponent<ObstacleController>().isOriginal = false;
+                }
             }
 
             genNext = true;
         }
-        if (cam.transform.position.y > this.transform.position.y + Y_DIFF)
+        if (backgroundCounter != 0 && cam.transform.position.y > this.transform.position.y + Y_DIFF)
         {
             // Delete this offscreen background
             Destroy(this.gameObject);
