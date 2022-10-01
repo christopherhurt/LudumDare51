@@ -5,7 +5,7 @@ using UnityEngine;
 public class BackgroundManager : MonoBehaviour
 {
 
-    private static float Y_DIFF = 30.0f;
+    private static readonly float Y_DIFF = 30.0f;
 
     public Camera cam;
     public int minObstacles;
@@ -15,6 +15,14 @@ public class BackgroundManager : MonoBehaviour
 
     private Boolean genNext = false;
     private int backgroundCounter = 0;
+
+    void Start()
+    {
+        // Copy the left boundary box collider's parameters we've set up in UI to the right boundary
+        BoxCollider2D[] boxes = GetComponents<BoxCollider2D>();
+        boxes[1].size = boxes[0].size;
+        boxes[1].offset = new Vector2(-boxes[0].offset.x, boxes[0].offset.y);
+    }
 
     void Update()
     {
@@ -32,9 +40,9 @@ public class BackgroundManager : MonoBehaviour
             int numObstacles = UnityEngine.Random.Range(minObstacles, maxObstacles + 1);
             for (int i = 0; i < numObstacles; i++)
             {
-                Transform obstacleTransform = obstacleToSpawn.GetComponent<Transform>();
-                Transform newTransform = newBackground.GetComponent<Transform>();
-                Instantiate(obstacleToSpawn, new Vector3(newTransform.position.x, newTransform.position.y, obstacleTransform.position.z), Quaternion.identity); // TODO: set x, y
+                Transform obsT = obstacleToSpawn.GetComponent<Transform>();
+                Transform newT = newBackground.GetComponent<Transform>();
+                Instantiate(obstacleToSpawn, new Vector3(newT.position.x, newT.position.y, obsT.position.z), Quaternion.identity); // TODO: set x, y
             }
 
             genNext = true;

@@ -7,7 +7,8 @@ public class ObstacleController : MonoBehaviour
 
     public float initSpeed;
 
-    // TODO: update from init speed?
+    // TODO: set init speed
+    // TODO: delete when offscreen
 
     // Start is called before the first frame update
     void Start()

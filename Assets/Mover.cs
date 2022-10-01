@@ -8,8 +8,10 @@ public class Mover : MonoBehaviour
 
     public float initRatePerSecond;
 
-    void Update()
+    void Start()
     {
-        transform.position = new Vector3(transform.position.x, transform.position.y + initRatePerSecond * Time.deltaTime, transform.position.z);
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        rb.velocity = new Vector2(0.0f, initRatePerSecond);
     }
+
 }
