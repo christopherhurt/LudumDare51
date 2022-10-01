@@ -1,0 +1,25 @@
+{
+	"texts":
+	[
+		{
+			"name": "Person1",
+			"text": "Temp text 1!"
+		},
+		{
+			"name": "Person2",
+			"text": "Temp text 2!"
+		},
+		{
+			"name": "Person3",
+			"text": "Temp text 3!"
+		},
+		{
+			"name": "Person1",
+			"text": "Temp text 4!"
+		},
+		{
+			"name": "Person2",
+			"text": "Temp text 5!"
+		}
+	]
+}

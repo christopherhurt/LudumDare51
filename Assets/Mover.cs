@@ -29,6 +29,11 @@ public class Mover : MonoBehaviour
         }
     }
 
+    public void speedup()
+    {
+        // TODO: implement
+    }
+
     private void updateCamViewSize()
     {
         // Lock cam size to match background dimensions and aspect ratio
