@@ -208,8 +208,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 32
-  m_fontSizeBase: 32
+  m_fontSize: 48
+  m_fontSizeBase: 48
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -506,7 +506,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialBackground: {fileID: 898546401}
   initialSizeFactor: 5.8
-  initRatePerSecond: 5
+  initRatePerSecond: 6
 --- !u!114 &519420034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -562,7 +562,7 @@ MonoBehaviour:
   canvas: {fileID: 1217419476}
   nameText: {fileID: 1920408040}
   phoneText: {fileID: 3960834}
-  json: {fileID: 4900000, guid: 58e1d771275265949bbcd34ab88dc58c, type: 3}
+  json: {fileID: 4900000, guid: 21e888a0124ea13478ff24ec03765396, type: 3}
 --- !u!1 &898546401
 GameObject:
   m_ObjectHideFlags: 0
@@ -597,14 +597,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 519420031}
-  minObstacles: 3
-  maxObstacles: 5
-  ySpawnRange: 5
-  obstacleXHalfRange: 7
+  minObstacles: 6
+  maxObstacles: 10
+  ySpawnRange: 14.5
   obstacleToSpawn: {fileID: 1724467551}
   firstSpawnBackgroundIndex: 1
   numLanes: 8
-  laneSize: 0.25
+  laneSize: 2.1
 --- !u!212 &898546403
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -665,7 +664,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 898546401}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalPosition: {x: 0, y: -1.25, z: 1}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1067,11 +1066,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 519420031}
-  initSpeed: 2
+  initSpeed: 1
   spriteOptions:
   - {fileID: 21300000, guid: bdccd51d892b2b54dafba2fe7f193302, type: 3}
-  - {fileID: 21300000, guid: 5c8693be21b711a4ba7320434a2249f8, type: 3}
-  - {fileID: 21300000, guid: 2446c3f9f836b7247978b44cb1654855, type: 3}
   isOriginal: 1
 --- !u!61 &1724467557
 BoxCollider2D:
@@ -1179,7 +1176,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1873764397}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.19, z: 0.999}
+  m_LocalPosition: {x: 0, y: -2.27, z: 0.999}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1199,11 +1196,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 519420031}
-  camYOffset: 7.2
-  acceleration: 50
-  angularAccelerationDegrees: 1000
-  frictionFactor: 1.2
-  maxAngularOffsetDegrees: 20
+  camYOffset: 7.1
+  acceleration: 20
+  angularAccelerationDegrees: 200
+  frictionFactor: 1.05
+  maxAngularOffsetDegrees: 16
 --- !u!61 &1873764401
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1286,7 +1283,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -75.1, y: 120.7}
+  m_AnchoredPosition: {x: -68.4, y: 120.7}
   m_SizeDelta: {x: 172.178, y: 33.6906}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1920408040
@@ -1336,8 +1333,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

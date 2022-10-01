@@ -100,7 +100,7 @@ public class Every10Sec : MonoBehaviour
         int p = arr.Length;
         for (int n = p - 1; n > 0; n--)
         {
-            int r = Random.Range(1, n);
+            int r = Random.Range(0, n);
             MyText t = arr[r];
             arr[r] = arr[n];
             arr[n] = t;

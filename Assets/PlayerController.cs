@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
         baseRate = cam.GetComponent<Mover>().initRatePerSecond;
 
         rb = GetComponent<Rigidbody2D>();
+        rb.velocity = new Vector2(0.0f, baseRate);
     }
 
     void FixedUpdate()
