@@ -10,12 +10,12 @@ public class PlayerController : MonoBehaviour
     public float frictionFactor;
     public float maxAngularOffsetDegrees;
 
-    private float baseRate;
     private Rigidbody2D rb;
 
     void Start()
     {
-        baseRate = cam.GetComponent<Mover>().initRatePerSecond;
+        // Do not save this as a field so we can pick update to new base rate as it changes
+        float baseRate = cam.GetComponent<Mover>().ratePerSecond;
 
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = new Vector2(0.0f, baseRate);
@@ -48,6 +48,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // Apply friction if no player controls are active
+        float baseRate = cam.GetComponent<Mover>().ratePerSecond;
         if (accX == 0.0f && Mathf.Abs(rb.velocity.x) > 0.000001f) { // Use offset so this adjustment doesn't continue running
             rb.velocity = new Vector2(rb.velocity.x / frictionFactor, rb.velocity.y);
         }
@@ -72,6 +73,7 @@ public class PlayerController : MonoBehaviour
     void LateUpdate()
     {
         // Keep the player in cam bounds!
+        float baseRate = cam.GetComponent<Mover>().ratePerSecond;
         if (transform.position.y > cam.transform.position.y + camYOffset / cam.aspect)
         {
             transform.position = new Vector3(transform.position.x, cam.transform.position.y + camYOffset / cam.aspect, transform.position.z);

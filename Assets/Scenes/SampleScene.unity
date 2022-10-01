@@ -506,7 +506,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialBackground: {fileID: 898546401}
   initialSizeFactor: 5.8
-  initRatePerSecond: 6
+  initRatePerSecond: 5
+  speedUpAcceleration: 0.3
+  speedUpDurationSec: 2
+  ratePerSecond: 0
 --- !u!114 &519420034
 MonoBehaviour:
   m_ObjectHideFlags: 0
