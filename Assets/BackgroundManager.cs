@@ -10,9 +10,12 @@ public class BackgroundManager : MonoBehaviour
     public Camera cam;
     public int minObstacles;
     public int maxObstacles;
+    public float ySpawnRange;
     public float obstacleXHalfRange;
     public UnityEngine.Object obstacleToSpawn;
     public int firstSpawnBackgroundIndex;
+    public int numLanes;
+    public float laneSize;
 
     private Boolean genNext = false;
     private int backgroundCounter = 0;
@@ -43,9 +46,12 @@ public class BackgroundManager : MonoBehaviour
                 int numObstacles = UnityEngine.Random.Range(minObstacles, maxObstacles + 1);
                 for (int i = 0; i < numObstacles; i++)
                 {
+                    float xOff = 0.0f; // TODO
+                    float yOff = 0.0f; // TODO
+
                     Transform obsT = obstacleToSpawn.GetComponent<Transform>();
                     Transform newT = newBackground.GetComponent<Transform>();
-                    UnityEngine.Object obs = Instantiate(obstacleToSpawn, new Vector3(newT.position.x, newT.position.y, obsT.position.z), Quaternion.identity); // TODO: set random x, y, spawn in lanes?
+                    UnityEngine.Object obs = Instantiate(obstacleToSpawn, new Vector3(newT.position.x + xOff, newT.position.y + yOff, obsT.position.z), Quaternion.identity);
                     obs.GetComponent<ObstacleController>().isOriginal = false;
                 }
             }
@@ -58,4 +64,5 @@ public class BackgroundManager : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
 }
