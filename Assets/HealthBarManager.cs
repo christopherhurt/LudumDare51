@@ -40,7 +40,7 @@ public class HealthBarManager : MonoBehaviour
         // Update health bar visual
         int newWidth = (int)(health * fullBarWidth);
         bar.sizeDelta = new Vector2(newWidth, bar.rect.height);
-        bar.position = new Vector3(xOffset - (fullBarWidth - newWidth) / 2, bar.position.y, bar.position.z);
+        bar.position = new Vector3(xOffset - 0.8f * (fullBarWidth - newWidth) / 2, bar.position.y, bar.position.z); // X is hardcoded to scale x of health bar border...
     }
 
 }
