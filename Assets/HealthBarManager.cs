@@ -25,7 +25,7 @@ public class HealthBarManager : MonoBehaviour
         milesTravelled += (milesPerMinute / 60.0) * Time.deltaTime;
 
         // TODO: remove this and apply damage from player script
-        inflictDamage(0.05f * Time.deltaTime);
+        inflictDamage(0.0f * Time.deltaTime);
     }
 
     public void inflictDamage(double amount)

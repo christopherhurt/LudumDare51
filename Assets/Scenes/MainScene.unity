@@ -1150,6 +1150,10 @@ MonoBehaviour:
   initSpeed: 1
   spriteOptions:
   - {fileID: 21300000, guid: bdccd51d892b2b54dafba2fe7f193302, type: 3}
+  - {fileID: 21300000, guid: d441abe96b66f614cbfeca6e42eb421b, type: 3}
+  - {fileID: 21300000, guid: d7ae4ec76316b1444b1ab9bd1ea4e1c4, type: 3}
+  - {fileID: 21300000, guid: c05b273c9083dfb4eba9729fd4201a65, type: 3}
+  - {fileID: 21300000, guid: 60dcd76d23dd65a4bb7d29dd782018da, type: 3}
   isOriginal: 1
 --- !u!61 &1724467557
 BoxCollider2D:

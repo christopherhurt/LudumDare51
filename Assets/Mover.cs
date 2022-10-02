@@ -54,8 +54,12 @@ public class Mover : MonoBehaviour
 
     public void speedup()
     {
-        isSpeedingUp = true;
-        speedUpTime = speedUpDurationSec;
+        // TODO: clean up, make var if necessary
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        ratePerSecond = rb.velocity.y + 2.0f;
+        rb.velocity = new Vector2(rb.velocity.x, ratePerSecond);
+        //isSpeedingUp = true;
+        //speedUpTime = speedUpDurationSec;
 
         // TODO: play sound
     }
