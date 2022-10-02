@@ -12,6 +12,7 @@ public class Every10Sec : MonoBehaviour
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI phoneText;
     public TextAsset json;
+    public AudioSource textSound;
 
     private float counterSec;
     private bool textShown;
@@ -50,7 +51,7 @@ public class Every10Sec : MonoBehaviour
             updateText();
             setMessageVisible(true);
 
-            // TODO: play sound
+            textSound.Play();
 
             textShown = true;
             textIsShowing = true;

@@ -8,6 +8,7 @@ public class Mover : MonoBehaviour
     public float initialSizeFactor;
     public float initRatePerSecond;
     public float speedUpAmount;
+    public AudioSource revSound;
 
     public float ratePerSecond; // Value provided in UI not used
 
@@ -40,7 +41,7 @@ public class Mover : MonoBehaviour
         ratePerSecond = rb.velocity.y + speedUpAmount;
         rb.velocity = new Vector2(rb.velocity.x, ratePerSecond);
 
-        // TODO: play sound
+        revSound.Play();
     }
 
     private void updateCamViewSize()
