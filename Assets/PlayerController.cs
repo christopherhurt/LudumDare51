@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public float angularAccelerationDegrees;
     public float frictionFactor;
     public float maxAngularOffsetDegrees;
+    public HealthBarManager healthManager;
 
     private Rigidbody2D rb;
 

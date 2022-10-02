@@ -56,6 +56,8 @@ public class Mover : MonoBehaviour
     {
         isSpeedingUp = true;
         speedUpTime = speedUpDurationSec;
+
+        // TODO: play sound
     }
 
     private void updateCamViewSize()
