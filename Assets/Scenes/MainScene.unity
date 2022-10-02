@@ -507,8 +507,7 @@ MonoBehaviour:
   initialBackground: {fileID: 898546401}
   initialSizeFactor: 5.8
   initRatePerSecond: 5
-  speedUpAcceleration: 0.3
-  speedUpDurationSec: 2
+  speedUpAmount: 1
   ratePerSecond: 0
 --- !u!114 &519420034
 MonoBehaviour:
@@ -1041,7 +1040,7 @@ GameObject:
   - component: {fileID: 1724467557}
   m_Layer: 0
   m_Name: Obstacle
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1155,6 +1154,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: c05b273c9083dfb4eba9729fd4201a65, type: 3}
   - {fileID: 21300000, guid: 60dcd76d23dd65a4bb7d29dd782018da, type: 3}
   isOriginal: 1
+  id: 0
 --- !u!61 &1724467557
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1281,12 +1281,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 519420031}
-  camYOffset: 7.1
+  camYOffset: 7.7
   acceleration: 20
   angularAccelerationDegrees: 200
   frictionFactor: 1.05
   maxAngularOffsetDegrees: 16
   healthManager: {fileID: 2127965360}
+  damageFactor: 0.013
 --- !u!61 &1873764401
 BoxCollider2D:
   m_ObjectHideFlags: 0

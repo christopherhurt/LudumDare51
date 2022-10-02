@@ -11,7 +11,8 @@ public class ObstacleController : MonoBehaviour
     public Sprite[] spriteOptions;
 
     public bool isOriginal = true;
-    
+    public int id;
+
     void Start()
     {
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
@@ -20,6 +21,8 @@ public class ObstacleController : MonoBehaviour
         // Randomly assign a sprite
         Sprite sprite = spriteOptions[(int)Random.Range(0.0f, spriteOptions.Length - 0.00001f)];
         GetComponent<SpriteRenderer>().sprite = sprite;
+
+        id = Random.Range(int.MinValue, int.MaxValue);
     }
 
     void Update()

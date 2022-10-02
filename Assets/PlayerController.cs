@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public float frictionFactor;
     public float maxAngularOffsetDegrees;
     public HealthBarManager healthManager;
+    public float damageFactor;
 
     private Rigidbody2D rb;
 
@@ -96,6 +97,15 @@ public class PlayerController : MonoBehaviour
         {
             transform.rotation = Quaternion.Euler(0.0f, 0.0f, -maxAngularOffsetDegrees);
             rb.angularVelocity = 0.0f;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Obstacle")
+        {
+            // Deal damage to player based on current speed
+            healthManager.inflictDamage(rb.velocity.magnitude * damageFactor);
         }
     }
 
